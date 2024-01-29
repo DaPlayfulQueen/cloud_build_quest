@@ -13,4 +13,4 @@ steps:
       - '-c'
       - |
         gcloud container clusters get-credentials quest-cluster --zone europe-west1 --project strange-mind-410708
-        kubectl set image deployment/quest_deployment CONTAINER_NAME=europe-west1-docker.pkg.dev/strange-mind-410708/wild-artefactory/quest-app:latest
+        kubectl set image deployment/quest-deployment CONTAINER_NAME=europe-west1-docker.pkg.dev/strange-mind-410708/wild-artefactory/quest-app:latest

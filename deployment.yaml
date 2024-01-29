@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quest-deployment
+spec: 
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: quest-app
+    spec:
+      containers:
+      - name: app
+        image: europe-west1-docker.pkg.dev/strange-mind-410708/wild-artefactory/quest-app:latest
+        ports:
+        - containerPort: 80
