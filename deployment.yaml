@@ -4,10 +4,13 @@ metadata:
   name: quest-deployment
 spec: 
   replicas: 3
+  selector:
+    matchLabels:
+      app: quest-app
   template:
     metadata:
       labels:
-        app: quest-app
+        app: quest-app 
     spec:
       containers:
       - name: app
