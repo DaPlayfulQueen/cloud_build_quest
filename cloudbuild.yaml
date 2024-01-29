@@ -1,0 +1,14 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/strange-mind-410708/personal-github/quest-app:latest', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'europe-west1-docker.pkg.dev/strange-mind-410708/personal-github/quest-app:latest']
+
+  - name: 'gcr.io/cloud-builders/kubectl'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gcloud container clusters get-credentials quest-cluster --zone europe-west1 --project strange-mind-410708
+        kubectl set image deployment/quest_deployment CONTAINER_NAME=europe-west1-docker.pkg.dev/strange-mind-410708/personal-github/quest-app:latest
