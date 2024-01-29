@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'europe-west1-docker.pkg.dev/strange-mind-410708/cloud_build_quest/quest-app:latest', '.']
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/strange-mind-410708/wild-artefactory/quest-app:latest', '.']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'europe-west1-docker.pkg.dev/strange-mind-410708/wild-artefactory/quest-app:latest']
